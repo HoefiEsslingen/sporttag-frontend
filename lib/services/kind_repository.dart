@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../daten_modelle/event_konfiguration.dart';
+// import '../daten_modelle/event_konfiguration.dart';
 
 import '../daten_modelle/kind.dart';
 
 class KindRepository {
-  final String baseUrl = apiUrl; // ggf. IP des Servers!
-
+  // final String baseUrl = apiUrl; // ggf. IP des Servers!
+static const String BASE_URL = 'https://sporttag-backend.onrender.com';
   /// Alle Kinder laden
   Future<List<Kind>> getAlleKinder() async {
-    final response = await http.get(Uri.parse('$baseUrl/kinder'));
+    final response = await http.get(Uri.parse('$BASE_URL/kinder'));
 
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
@@ -22,7 +22,7 @@ class KindRepository {
   /// Neues Kind erstellen
   Future<Kind> erstelleKind(String name, int alter, {required Kind kind}) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/kinder'),
+      Uri.parse('$BASE_URL/kinder'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'name': name, 'alter': alter}),
     );
@@ -37,7 +37,7 @@ class KindRepository {
   /// Kind aktualisieren mit Optimistic Locking
   Future<Kind> aktualisiereKind(Kind kind) async {
     final response = await http.put(
-      Uri.parse('$baseUrl/kinder/${kind.id}'),
+      Uri.parse('$BASE_URL/kinder/${kind.id}'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
         'name': kind.name,
