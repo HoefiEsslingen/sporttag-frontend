@@ -1,0 +1,1 @@
+ /Users/gerold-hoeferlin/Desktop/Flutter/Back4App-App/sporttag-frontend/.dart_tool/flutter_build/67caeca0de5a14d49dfc639a6df722e2/dart_build_result.json: 

@@ -1,0 +1,1 @@
+ /Users/gerold-hoeferlin/Desktop/Flutter/Back4App-App/sporttag-frontend/build/web/manifest.json:  /Users/gerold-hoeferlin/Desktop/Flutter/Back4App-App/sporttag-frontend/web/index.html /Users/gerold-hoeferlin/Desktop/Flutter/Back4App-App/sporttag-frontend/web/manifest.json
